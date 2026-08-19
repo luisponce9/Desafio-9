@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    grid-area: navbar;
+    background-color: #0b5ed7;
+}
+
+#filtro-busqueda {
+    grid-area: filtro-busqueda;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 25px;
+}
+
+main {
+    grid-area: principal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #082B85;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 0px;
+    gap: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "navbar"
+        "filtro-busqueda"
+        "principal"
+        "footer";
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-img-top {
+    width: 80%;
+    object-fit: cover;
+    display: block; 
+    margin: 0 auto; 
+}
+
+.card {
+    margin: 2% auto;
+    width: 95%;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: transparent;
+    color:white;
+}
+
+.menu-icon {
+    display: block;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+}
+
+@media (min-width:576px) {
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            "navbar filtro-busqueda"
+            "navbar principal"
+            "footer principal";
+        grid-template-columns: 180px 1fr;
+        grid-template-rows: auto 1fr;
+        min-height: 100vh;
+    }
+
+    main {
+        display: flex;
+        padding: 10px 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 5px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    footer{
+        justify-content: flex-end;
+        padding-bottom: 20px;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+}
